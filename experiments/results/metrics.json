@@ -1,0 +1,82 @@
+[
+  {
+    "method": "K-Means (k=5)",
+    "n_clusters": 5,
+    "ari": 0.8633,
+    "nmi": 0.84,
+    "silhouette": 0.3522,
+    "note": ""
+  },
+  {
+    "method": "K-Means (k=7)",
+    "n_clusters": 7,
+    "ari": 0.5606,
+    "nmi": 0.8024,
+    "silhouette": 0.286,
+    "note": ""
+  },
+  {
+    "method": "K-Means (k=9)",
+    "n_clusters": 9,
+    "ari": 0.5511,
+    "nmi": 0.7833,
+    "silhouette": 0.3096,
+    "note": ""
+  },
+  {
+    "method": "K-Means (k=11)",
+    "n_clusters": 11,
+    "ari": 0.4696,
+    "nmi": 0.7873,
+    "silhouette": 0.2462,
+    "note": ""
+  },
+  {
+    "method": "GMM diag (k=5)",
+    "n_clusters": 5,
+    "ari": 0.4986,
+    "nmi": 0.7164,
+    "silhouette": 0.3497,
+    "note": "PCA\u219215d (85% var)"
+  },
+  {
+    "method": "GMM diag (k=7)",
+    "n_clusters": 7,
+    "ari": 0.5606,
+    "nmi": 0.8024,
+    "silhouette": 0.4166,
+    "note": "PCA\u219215d (85% var)"
+  },
+  {
+    "method": "GMM diag (k=9)",
+    "n_clusters": 9,
+    "ari": 0.5511,
+    "nmi": 0.7833,
+    "silhouette": 0.4497,
+    "note": "PCA\u219215d (85% var)"
+  },
+  {
+    "method": "GMM diag (k=11)",
+    "n_clusters": 11,
+    "ari": 0.4357,
+    "nmi": 0.7399,
+    "silhouette": 0.3943,
+    "note": "PCA\u219215d (85% var)"
+  },
+  {
+    "method": "UMAP+HDBSCAN",
+    "n_clusters": 11,
+    "ari": 0.611,
+    "nmi": 0.8548,
+    "silhouette": 0.879,
+    "note": "PCA\u219227d, noise=0"
+  },
+  {
+    "method": "DTW KMeans (k=9)",
+    "n_clusters": 9,
+    "ari": 0.9848,
+    "nmi": 0.9632,
+    "silhouette": 0.3888,
+    "note": "ball traj, resamp\u219288f"
+  }
+]
