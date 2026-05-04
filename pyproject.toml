@@ -1,0 +1,25 @@
+[project]
+name = "mock-data-handball"
+version = "0.1.0"
+description = "Generates realistic synthetic handball match data for ML exploration"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "duckdb>=1.2",
+    "numpy>=2.0",
+    "pandas>=2.0",
+    "typer>=0.12",
+    "rich>=13.0",
+    "matplotlib>=3.8",
+    "imageio[ffmpeg]>=2.30",
+]
+
+[project.scripts]
+handball-mock = "handball_mock.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/handball_mock"]
