@@ -11,3 +11,5 @@ wheels/
 
 .claude/
 *.mp4
+*.duckdb
+

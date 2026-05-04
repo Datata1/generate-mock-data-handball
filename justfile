@@ -51,6 +51,26 @@ scenarios:
 # Regenerate the default DB and render a fresh preview clip
 regenerate n="3" d="600" seed="42": (all n d seed) (visualize)
 
+# ── Unsupervised ML experiments ────────────────────────────────────────────────
+
+# Install ML experiment dependencies (scikit-learn, umap-learn, seaborn, tslearn)
+install-experiments:
+    uv sync --extra experiments
+
+# Tier 1 only — K-Means + GMM baseline (<30 seconds)
+experiment-cluster db=db:
+    PYTHONPATH=. uv run python experiments/run_all.py --db {{db}} --tier 1
+
+# Tier 2 only — UMAP visualisation + DTW K-Medoids
+experiment-viz db=db:
+    PYTHONPATH=. uv run python experiments/run_all.py --db {{db}} --tier 2
+
+# All tiers (Tier 3 skipped automatically if torch not installed)
+experiment db=db:
+    PYTHONPATH=. uv run python experiments/run_all.py --db {{db}} --tier all
+
+# ── Smoke test ─────────────────────────────────────────────────────────────────
+
 # Quick smoke-test: 1 match, 2 minutes
 smoke:
     uv run handball-mock generate /tmp/handball_smoke.duckdb -n 1 -d 120 --seed 1
