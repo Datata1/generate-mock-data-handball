@@ -1,0 +1,148 @@
+{
+  "folds": [
+    {
+      "fold": 0,
+      "test_match": "mock_0042_000",
+      "train_n": 151,
+      "test_n": 72,
+      "accuracy": 1.0,
+      "f1_macro": 1.0,
+      "per_class_f1": {
+        "defense_42": 1.0,
+        "defense_51": 1.0,
+        "defense_60": 1.0,
+        "doppelpass": 1.0,
+        "kreislaeuferspiel": 1.0,
+        "kreuzung": 1.0,
+        "parallelstos": 1.0,
+        "rueckpass": 1.0,
+        "transition": 1.0,
+        "macro avg": 1.0,
+        "weighted avg": 1.0
+      },
+      "model": "Random Forest"
+    },
+    {
+      "fold": 1,
+      "test_match": "mock_0042_001",
+      "train_n": 146,
+      "test_n": 77,
+      "accuracy": 0.987,
+      "f1_macro": 0.99,
+      "per_class_f1": {
+        "defense_42": 1.0,
+        "defense_51": 1.0,
+        "defense_60": 1.0,
+        "doppelpass": 1.0,
+        "kreislaeuferspiel": 1.0,
+        "kreuzung": 1.0,
+        "parallelstos": 0.9231,
+        "rueckpass": 1.0,
+        "transition": 0.987,
+        "macro avg": 0.99,
+        "weighted avg": 0.9866
+      },
+      "model": "Random Forest"
+    },
+    {
+      "fold": 2,
+      "test_match": "mock_0042_002",
+      "train_n": 149,
+      "test_n": 74,
+      "accuracy": 1.0,
+      "f1_macro": 1.0,
+      "per_class_f1": {
+        "defense_42": 1.0,
+        "defense_51": 1.0,
+        "defense_60": 1.0,
+        "doppelpass": 1.0,
+        "kreislaeuferspiel": 1.0,
+        "kreuzung": 1.0,
+        "parallelstos": 1.0,
+        "rueckpass": 1.0,
+        "transition": 1.0,
+        "macro avg": 1.0,
+        "weighted avg": 1.0
+      },
+      "model": "Random Forest"
+    },
+    {
+      "fold": 0,
+      "test_match": "mock_0042_000",
+      "train_n": 151,
+      "test_n": 72,
+      "accuracy": 0.9861,
+      "f1_macro": 0.9884,
+      "per_class_f1": {
+        "defense_42": 1.0,
+        "defense_51": 1.0,
+        "defense_60": 0.9091,
+        "doppelpass": 1.0,
+        "kreislaeuferspiel": 1.0,
+        "kreuzung": 1.0,
+        "parallelstos": 1.0,
+        "rueckpass": 1.0,
+        "transition": 0.9863,
+        "macro avg": 0.9884,
+        "weighted avg": 0.9856
+      },
+      "model": "Gradient Boosting"
+    },
+    {
+      "fold": 1,
+      "test_match": "mock_0042_001",
+      "train_n": 146,
+      "test_n": 77,
+      "accuracy": 0.974,
+      "f1_macro": 0.9506,
+      "per_class_f1": {
+        "defense_42": 1.0,
+        "defense_51": 0.8,
+        "defense_60": 0.9091,
+        "doppelpass": 0.9231,
+        "kreislaeuferspiel": 1.0,
+        "kreuzung": 1.0,
+        "parallelstos": 0.9231,
+        "rueckpass": 1.0,
+        "transition": 1.0,
+        "macro avg": 0.9506,
+        "weighted avg": 0.9749
+      },
+      "model": "Gradient Boosting"
+    },
+    {
+      "fold": 2,
+      "test_match": "mock_0042_002",
+      "train_n": 149,
+      "test_n": 74,
+      "accuracy": 1.0,
+      "f1_macro": 1.0,
+      "per_class_f1": {
+        "defense_42": 1.0,
+        "defense_51": 1.0,
+        "defense_60": 1.0,
+        "doppelpass": 1.0,
+        "kreislaeuferspiel": 1.0,
+        "kreuzung": 1.0,
+        "parallelstos": 1.0,
+        "rueckpass": 1.0,
+        "transition": 1.0,
+        "macro avg": 1.0,
+        "weighted avg": 1.0
+      },
+      "model": "Gradient Boosting"
+    }
+  ],
+  "mean_by_model": {
+    "Random Forest": {
+      "mean_accuracy": 0.9957,
+      "std_accuracy": 0.0061,
+      "mean_f1_macro": 0.9967
+    },
+    "Gradient Boosting": {
+      "mean_accuracy": 0.9867,
+      "std_accuracy": 0.0106,
+      "mean_f1_macro": 0.9797
+    }
+  }
+}

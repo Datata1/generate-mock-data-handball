@@ -59,15 +59,37 @@ install-experiments:
 
 # Tier 1 only — K-Means + GMM baseline (<30 seconds)
 experiment-cluster db=db:
-    PYTHONPATH=. uv run python experiments/run_all.py --db {{db}} --tier 1
+    PYTHONPATH=. uv run python experiments/unsupervised/run_all.py --db {{db}} --tier 1
 
 # Tier 2 only — UMAP visualisation + DTW K-Medoids
 experiment-viz db=db:
-    PYTHONPATH=. uv run python experiments/run_all.py --db {{db}} --tier 2
+    PYTHONPATH=. uv run python experiments/unsupervised/run_all.py --db {{db}} --tier 2
 
 # All tiers (Tier 3 skipped automatically if torch not installed)
 experiment db=db:
-    PYTHONPATH=. uv run python experiments/run_all.py --db {{db}} --tier all
+    PYTHONPATH=. uv run python experiments/unsupervised/run_all.py --db {{db}} --tier all
+
+# ── Supervised ML ──────────────────────────────────────────────────────────────
+
+# Tier 1: Random Forest + Gradient Boosting baseline (no PyTorch needed)
+supervised-train db=db:
+    PYTHONPATH=. uv run python experiments/supervised/train_rf.py --db {{db}}
+
+# Tier 1 without transition segments (cleaner 8-class problem)
+supervised-train-clean db=db:
+    PYTHONPATH=. uv run python experiments/supervised/train_rf.py --db {{db}} --no-transition
+
+# Tier 2: LSTM sequence classifier (requires PyTorch)
+supervised-train-lstm db=db epochs="40":
+    PYTHONPATH=. uv run python experiments/supervised/train_lstm.py --db {{db}} --epochs {{epochs}}
+
+# Tier 3: GCN + LSTM — per-frame player graphs + temporal LSTM (plain PyTorch, no torch-geometric)
+supervised-train-gcn:
+    PYTHONPATH=. uv run python experiments/supervised/train_gcn.py --db {{db}} --epochs 50
+
+# Generate comparison plots + FINDINGS.md from all available supervised results
+supervised-report:
+    PYTHONPATH=. uv run python experiments/supervised/report.py
 
 # ── Smoke test ─────────────────────────────────────────────────────────────────
 

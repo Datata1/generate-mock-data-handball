@@ -1,11 +1,11 @@
 """Unsupervised ML experiment orchestrator.
 
 Usage:
-    uv run python experiments/run_all.py                          # all tiers
-    uv run python experiments/run_all.py --db other.duckdb
-    uv run python experiments/run_all.py --tier 1                 # K-Means+GMM only
-    uv run python experiments/run_all.py --tier 2                 # UMAP+HDBSCAN+DTW
-    uv run python experiments/run_all.py --tier 3                 # GCN (optional)
+    uv run python experiments/unsupervised/run_all.py                  # all tiers
+    uv run python experiments/unsupervised/run_all.py --db other.duckdb
+    uv run python experiments/unsupervised/run_all.py --tier 1         # K-Means+GMM only
+    uv run python experiments/unsupervised/run_all.py --tier 2         # UMAP+HDBSCAN+DTW
+    uv run python experiments/unsupervised/run_all.py --tier 3         # GCN (optional)
 """
 
 from __future__ import annotations
@@ -19,7 +19,7 @@ import numpy as np
 from rich.console import Console
 from rich.rule import Rule
 
-RESULTS_DIR = Path("experiments/results")
+RESULTS_DIR = Path("experiments/unsupervised/results")
 
 
 def main() -> None:
@@ -61,7 +61,7 @@ def main() -> None:
         console.print(Rule("[bold cyan]Tier 1 — K-Means + GMM[/bold cyan]"))
         t1 = time.perf_counter()
 
-        from experiments.baseline import run_kmeans, run_gmm, run_pca_scatter
+        from experiments.unsupervised.baseline import run_kmeans, run_gmm, run_pca_scatter
         from experiments.evaluate import print_metrics_table
         from experiments.plot import plot_confusion_heatmap
 
@@ -94,7 +94,7 @@ def main() -> None:
         console.print(Rule("[bold cyan]Tier 2 — UMAP + HDBSCAN + DTW K-Medoids[/bold cyan]"))
         t2 = time.perf_counter()
 
-        from experiments.umap_cluster import run_umap_hdbscan, run_dtw_kmedoids
+        from experiments.unsupervised.umap_cluster import run_umap_hdbscan, run_dtw_kmedoids
         from experiments.evaluate import print_metrics_table
         from experiments.plot import plot_confusion_heatmap
 
@@ -121,7 +121,7 @@ def main() -> None:
         console.print(Rule("[bold cyan]Tier 3 — GCN Embeddings (optional)[/bold cyan]"))
         t3 = time.perf_counter()
 
-        from experiments.gcn_cluster import run_gcn_kmeans
+        from experiments.unsupervised.gcn_cluster import run_gcn_kmeans
         from experiments.evaluate import print_metrics_table
 
         gcn_result = run_gcn_kmeans(conn, y_seg, meta_seg, k=9, output_dir=RESULTS_DIR)

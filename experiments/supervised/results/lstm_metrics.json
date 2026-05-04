@@ -1,0 +1,64 @@
+{
+  "folds": [
+    {
+      "fold": 0,
+      "test_match": "mock_0042_002",
+      "accuracy": 0.8784,
+      "f1_macro": 0.5968,
+      "per_class_f1": {
+        "defense_42": 0.0,
+        "defense_51": 0.0,
+        "defense_60": 0.8,
+        "doppelpass": 1.0,
+        "kreislaeuferspiel": 0.7143,
+        "kreuzung": 1.0,
+        "parallelstos": 0.0,
+        "rueckpass": 0.8571,
+        "transition": 1.0,
+        "macro avg": 0.5968,
+        "weighted avg": 0.8309
+      }
+    },
+    {
+      "fold": 1,
+      "test_match": "mock_0042_000",
+      "accuracy": 0.8056,
+      "f1_macro": 0.5168,
+      "per_class_f1": {
+        "defense_42": 0.4,
+        "defense_51": 0.0,
+        "defense_60": 0.0,
+        "doppelpass": 1.0,
+        "kreislaeuferspiel": 0.8571,
+        "kreuzung": 0.7273,
+        "parallelstos": 0.0,
+        "rueckpass": 0.6667,
+        "transition": 1.0,
+        "macro avg": 0.5168,
+        "weighted avg": 0.7411
+      }
+    },
+    {
+      "fold": 2,
+      "test_match": "mock_0042_001",
+      "accuracy": 0.7922,
+      "f1_macro": 0.5722,
+      "per_class_f1": {
+        "defense_42": 1.0,
+        "defense_51": 0.0,
+        "defense_60": 1.0,
+        "doppelpass": 1.0,
+        "kreislaeuferspiel": 0.7692,
+        "kreuzung": 0.0,
+        "parallelstos": 0.0,
+        "rueckpass": 0.381,
+        "transition": 1.0,
+        "macro avg": 0.5722,
+        "weighted avg": 0.7451
+      }
+    }
+  ],
+  "mean_accuracy": 0.8254,
+  "std_accuracy": 0.0379,
+  "mean_f1_macro": 0.5619
+}

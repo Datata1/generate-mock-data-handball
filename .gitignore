@@ -9,7 +9,9 @@ wheels/
 # Virtual environments
 .venv
 
+# Misc
 .claude/
 *.mp4
 *.duckdb
-
+*.pt
+*.pkl
